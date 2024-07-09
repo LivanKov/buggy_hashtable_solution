@@ -1,0 +1,19 @@
+name: Compile and Run
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Compile
+      run: make
+
+    - name: Run
+      run: ./hashtable.out
